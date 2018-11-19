@@ -30,6 +30,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+                <th></th>
             </thead>
             <tbody>
                 <tr v-for="(contact, index) in contacts" :key="index">
@@ -37,6 +38,9 @@
                     <td>{{ contact.firstName }}</td>
                     <td>{{ contact.lastName }}</td>
                     <td>{{ contact.email }}</td>
+                    <td>
+                        <button @click="removeContact(contact)">Remove</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -70,6 +74,14 @@ export default {
             //dodali smo u listu novokreirani 
             this.newContact = {}
             //ocistili smo objekat i bude prazan 
+        },
+
+        removeContact(contact) {
+             //console.log(contact)
+            let index = this.contacts.indexOf(contact);
+            //console.log(index);
+            this.contacts.splice(index, 1);
+          // this.contacts.splice((this.contacts.indexOf(contact)), 1); moze u jednoj liniji koda
         }
     }
 };
