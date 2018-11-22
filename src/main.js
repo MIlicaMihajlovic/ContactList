@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import ContactList from './components/ContactList.vue';
 import AddContact from './components/AddContact.vue';
 
+
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
@@ -12,7 +13,7 @@ const routes = [  //ovo se obicno izvodi u drugom fajlu
   {path: '/', redirect: '/contacts'},
   {path: '/contacts', component: ContactList},
   {path: '/add-contact', component: AddContact},
-  
+
 ];
 
 
