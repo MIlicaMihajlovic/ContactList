@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <ContactList/>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <!-- <ContactList/> -->
     <!-- <BlogPost 
       :title="parentTitle"
       @callParentFunction="parentFunction"
     /> -->
-   
+    <NavBar />
+    <router-view></router-view>
+   <!-- menja nam komponente -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import ContactList from './components/ContactList.vue'
-import BlogPost from './components/BlogPost.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import ContactList from './components/ContactList.vue';
+import BlogPost from './components/BlogPost.vue';
+import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'app',
@@ -27,7 +30,8 @@ export default {
   components: {
     HelloWorld,
     ContactList,
-    BlogPost
+    BlogPost,
+    NavBar
   },
 
   methods: {
